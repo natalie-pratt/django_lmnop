@@ -1,0 +1,14 @@
+{% extends 'lmn/base.html' %}
+
+{% block content %}
+
+  <h1>Delete "{{ note.title }}"</h1>
+  <p>Are you sure you want to permanently delete this note?</p>
+
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit" name="confirm" value="yes">Yes, delete</button>
+    <a href="{% url 'note_detail' note.pk %}">Cancel</a>
+  </form>
+  
+{% endblock %}

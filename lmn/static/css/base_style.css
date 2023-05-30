@@ -1,0 +1,240 @@
+/* Fonts and Colors */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  background-color: #282e2e;
+  color: antiquewhite;
+}
+h2, h3 {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.message {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.messages {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.messages li {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+.messages li.error {
+  background-color: #ffb3b3;
+}
+/* Buttons */
+button[type="submit"], #add-new-show-link {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+#add-new-show-link {
+  font-size: large;
+  color: white;
+}
+/* Form */
+.form, form {
+  margin: 0 auto;
+  width: 300px;
+  padding: 20px;
+  border-radius: 3px;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+input[type="text"], input[type="email"], input[type="password"], input[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+/* Links */
+a, #clear_search {
+  color: #4CAF50;
+  text-decoration: none;
+}
+a:hover, #clear_search:hover {
+  text-decoration: underline;
+}
+.navlinks a,
+.navlinks p {
+  display: inline-block;
+}
+
+/* Positioning */
+#welcome-user-msg, #login-or-sign-up {
+  position: absolute;
+  top: 85px;
+  right: 0;
+  padding-right: 10px;
+}
+#artist-detail-title {
+  margin-top: 100px;
+}
+#artist-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+#welcome {
+  margin-top: 50px;
+  text-align: center;
+}
+#welcome p {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+}
+#artist-list-title {
+  margin-top: 40px;
+}
+.artist .venue {
+  border-bottom: 1px solid #ccc;
+  padding: 16px 0;
+}
+.artist a:hover {
+  text-decoration: underline;
+}
+#artist_list input[type="text"] {
+  width: 400px;
+}
+.share-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.share-buttons a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+  text-decoration: none;
+  font-size: 12px;
+}
+.share-buttons a img {
+  width: 40px;
+  height: 40px;
+}
+.error, .goodbye-message {
+  border-radius: 5px;
+  padding: 2px;
+  margin: 2px;
+}
+.success-message {
+  color:#4CAF50;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 2px;
+}
+.error {
+  background-color: #b73f08;
+}
+.goodbye-message, .note-delete-message {
+  color: red;
+  font-weight: bold;
+  float: right; 
+}
+#user-first-name-welcome {
+  font-size: 24px;
+  margin-top: 20px;
+}
+form button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+#username-notes {
+  font-size: 20px;
+  margin-top: 40px;
+}
+.note {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px 0;
+}
+.note-title {
+  font-size: 20px;
+  margin: 0;
+}
+.note-title a {
+  text-decoration: none;
+}
+.note-title a:hover {
+  text-decoration: underline;
+}
+.note-info {
+  font-size: 14px;
+  margin-top: 10px;
+}
+.edit-profile, .change-password {
+  margin: 0;
+  padding: 0;
+}
+.artist a {
+  text-decoration: none;
+}
+.artist a:hover {
+  text-decoration: underline;
+}
+#clear_search:hover {
+  text-decoration: underline;
+}
+.artist-search {
+  margin-bottom: 20px;
+}
+.search-results-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.clear-search {
+  margin-left: 10px;
+}
+.venues-list, .artist-list {
+  padding: 20px;
+}
+.venue, .artist {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #FF5733;
+}
+.venue-name, .artist p {
+  margin-bottom: 5px;
+}
+.venue-location {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.venue-notes, .artist-notes {
+  font-size: 14px;
+}
+form .errorlist {
+  color: red
+}
+.no-records {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 50px;
+}

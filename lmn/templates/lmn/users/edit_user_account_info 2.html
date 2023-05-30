@@ -1,0 +1,29 @@
+{% extends 'lmn/base.html' %}
+{% load static %}
+{% block content %}
+
+  <!-- Page to edit logged in user's account information.
+
+      This page contains fields to change the user's
+      
+        - username
+        - first/last name
+        - email
+
+  -->
+
+  <h2>Edit Account Information</h2>
+
+  <form method="POST" action="">
+    <table id="edit-account-info-form">
+      {% csrf_token %}
+      {{ form.as_table }}
+    </table>
+    <button type="submit">Update Account Info</button>
+  </form>
+
+  <form method="link" action="{% url 'user_profile' user_pk=user.pk %}">
+    <button>Cancel</button>
+  </form>
+
+{% endblock %}

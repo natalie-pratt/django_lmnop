@@ -1,0 +1,54 @@
+{% extends 'lmn/base.html' %}
+{% load static %}
+
+{% block content %}
+  <h1>Venue List</h1>
+  <div>
+    <h2>Venue Search</h2>
+    <form action="{% url 'venue_list' %}" class="search-form">
+      {{ form }}
+      <button type="submit">Search</button>
+    </form>
+    <div class="search-results">
+      {% if search_term %}
+        <h3 class="search-results-title">Venues matching '{{ search_term }}'
+          <a href="{% url 'venue_list' %}" class='clear-search'>clear</a>
+        </h3>
+      {% else %}
+        <h3 class="search-results-title">All venues</h3>
+      {% endif %}
+    </div>
+    <div class="venues-list">
+      {% for venue in venues %}
+        <div class="venue" id="venue-{{ venue.pk }}">
+          <p class="venue-name">
+            <a href="{% url 'venue_detail' venue_pk=venue.pk %}">{{ venue.name }}</a>
+          </p>
+          <p class="venue-location">{{ venue.city }}, {{ venue.state }}</p>
+          <p class="venue-notes">See artists, notes, and add your own <a href='{% url "artists_at_venue" venue_pk=venue.pk %}'>{{ venue.name }} notes</a></p>
+        </div>
+      {% empty %}
+        <p class="no-records">No venues found</p>
+      {% endfor %}
+    </div>
+    {% if venues.has_other_pages %}
+      <div class="pagination">
+        {% if venues.has_previous %}
+          <a href="?page=1{% if search_term %}&search_name={{ search_term }}{% endif %}" class="page-number">&laquo; first</a>
+          <a href="?page={{ venues.previous_page_number }}{% if search_term %}&search_name={{ search_term }}{% endif %}" class="page-number">&lsaquo; prev</a>
+        {% endif %}
+        {% for i in venues.paginator.page_range %}
+          {% if venues.number == i %}
+            <span class="page-number current-page">{{ i }}</span>
+          {% elif i > venues.number|add:'-3' and i < venues.number|add:'3' %}
+            <a href="?page={{ i }}{% if search_term %}&search_name={{ search_term }}{% endif %}" class="page-number">{{ i }}</a>
+          {% endif %}
+        {% endfor %}
+        {% if venues.has_next %}
+          <a href="?page={{ venues.next_page_number }}{% if search_term %}&search_name={{ search_term }}{% endif %}" class="page-number">next &rsaquo;</a>
+          <a href="?page={{ venues.paginator.num_pages }}{% if search_term %}&search_name={{ search_term }}{% endif %}" class="page-number">last &raquo;</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}

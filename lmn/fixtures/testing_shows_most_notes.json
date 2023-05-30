@@ -1,0 +1,65 @@
+[
+  {
+    "model": "lmn.show",
+    "pk": 1,
+    "fields": {
+      "show_date": "2017-01-02T17:30:00-00:00",
+      "artist": 1,
+      "venue": 2
+    }
+  },
+  {
+    "model": "lmn.show",
+    "pk": 2,
+    "fields": {
+      "show_date": "2017-02-12T19:30:00-00:00",
+      "artist": 1,
+      "venue": 2
+    }
+  },
+  {
+    "model": "lmn.show",
+    "pk": 3,
+    "fields": {
+      "show_date": "2017-06-10T21:45:00-00:00",
+      "artist": 2,
+      "venue": 1
+    }
+  },
+  {
+    "model": "lmn.show",
+    "pk": 4,
+    "fields": {
+      "show_date": "2017-03-22T17:30:00-00:00",
+      "artist": 1,
+      "venue": 2
+    }
+  },
+  {
+    "model": "lmn.show",
+    "pk": 5,
+    "fields": {
+      "show_date": "2017-05-02T19:30:00-00:00",
+      "artist": 1,
+      "venue": 2
+    }
+  },
+  {
+    "model": "lmn.show",
+    "pk": 6,
+    "fields": {
+      "show_date": "2017-12-04T21:45:00-00:00",
+      "artist": 2,
+      "venue": 1
+    }
+  },
+  {
+    "model": "lmn.show",
+    "pk": 7,
+    "fields": {
+      "show_date": "2017-12-04T21:45:00-00:00",
+      "artist": 2,
+      "venue": 1
+    }
+  }
+]

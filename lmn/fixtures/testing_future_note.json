@@ -1,0 +1,36 @@
+[
+    {
+        "model": "lmn.show",
+        "pk":1,
+        "fields":{
+          "show_date": "2024-01-21T21:45:00-00:00",
+          "artist":1,
+          "venue":1
+        }
+      },
+      {
+        "model":"lmn.venue",
+        "pk":1,
+        "fields":{
+           "name":"Target Center",
+           "city":"Minneapolis",
+           "state":"MN"
+        }
+     },
+     {
+        "model":"lmn.artist",
+        "pk":1,
+        "fields":{
+          "name":"Yes"
+        }
+      },
+      {
+        "model": "lmn.show",
+        "pk":2,
+        "fields":{
+          "show_date": "2023-01-21T21:45:00-00:00",
+          "artist":1,
+          "venue":1
+        }
+      }
+]

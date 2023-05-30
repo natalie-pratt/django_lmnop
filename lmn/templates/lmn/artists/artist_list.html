@@ -1,0 +1,57 @@
+{% extends 'lmn/base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <h1>Artist List</h1>
+
+  <div class="artist-search">
+    <h2>Artist Search</h2>
+    <form action="{% url 'artist_list' %}">
+      {{ form }}
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  {% if search_term %}
+    <h2 id="artist-list-title">Artists matching '{{ search_term }}' 
+      <a href="{% url 'artist_list' %}" id='clear_search'>(clear)</a>
+    </h2>
+  {% else %}
+    <h2 id="artist-list-title">All artists</h2>
+  {% endif %}
+
+  <div class="artist-list">
+    {% for artist in artists %}
+      <div class="artist" id="artist_{{ artist.pk }}">
+        <p>
+          <a href="{% url 'artist_detail' artist_pk=artist.pk %}">{{ artist.name }}</a>
+        </p>
+        <p class="artist-notes">
+          <a href="{% url 'venues_for_artist' artist_pk=artist.pk %}">See venues played, notes, and add your own {{ artist.name }} notes</a>
+        </p>
+      </div>
+    {% empty %}
+      <p class="no-records">No artists found</p>
+    {% endfor %}
+  </div>
+
+  <div class="pagination">
+    <span class="step-links">
+      {% if artists.has_previous %}
+        <a href="?page=1{% if search_term %}&search_name={{ search_term }}{% endif %}">&laquo; first</a>
+        <a href="?page={{ artists.previous_page_number }}{% if search_term %}&search_name={{ search_term }}{% endif %}">previous</a>
+      {% endif %}
+
+      <span class="current-page">
+        Page {{ artists.number }} of {{ artists.paginator.num_pages }}.
+      </span>
+
+      {% if artists.has_next %}
+        <a href="?page={{ artists.next_page_number }}{% if search_term %}&search_name={{ search_term }}{% endif %}">next</a>
+        <a href="?page={{ artists.paginator.num_pages }}{% if search_term %}&search_name={{ search_term }}{% endif %}">last &raquo;</a>
+      {% endif %}
+    </span>
+  </div>
+
+{% endblock %}

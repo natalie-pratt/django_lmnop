@@ -1,0 +1,21 @@
+{% extends 'lmn/base.html' %}
+
+{% block content %}
+
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    {% if form.errors %}
+      {% for field, errors in form.errors.items %}
+        {{ field }}:
+        <ul>
+        {% for error in errors %}
+          <li> {{ error }} </li>
+        {% endfor %}
+       </ul>
+      {% endfor %}
+    {% endif %}
+    <button type="submit">Save</button>
+  </form>
+  
+{% endblock %}

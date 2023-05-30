@@ -1,0 +1,34 @@
+{% extends 'lmn/base.html' %}
+
+{% block content %}
+
+  {% if top_5_shows|length > 1 %}
+    <h1>Top {{ top_5_shows|length }} recent shows with the most notes</h1>
+    
+  {% elif top_5_shows|length == 1 %}
+    <h1>Top show with the most notes</h1>
+
+  {% else %}
+    <h1>Top recent shows with the most notes</h1>
+    
+  {% endif %}
+
+  {% for show in top_5_shows %}
+
+    <div id="shows-with-most-notes-title">
+      <h4>
+        <a href="{% url 'artist_detail' artist_pk=show.artist.pk %}">{{ show.artist.name }}</a>
+        Playing at <a href="{% url 'venue_detail' venue_pk=show.venue.pk %}">{{ show.venue.name }}</a>
+      </h4>
+    </div>
+
+    <div id="shows-with-most-notes-detail">
+      <p>Date & Time: {{ show.show_date }}</p>
+      <p>Number of <a href="{% url 'notes_for_show' show_pk=show.pk %}">notes</a>: {{ show.note_count }}</p>
+    </div>
+
+  {% empty %}
+    <p>No shows found</p>
+  {% endfor %}
+
+{% endblock %}
